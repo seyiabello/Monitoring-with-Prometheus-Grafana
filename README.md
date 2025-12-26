@@ -43,7 +43,8 @@ Monitoring-with-Prometheus-Grafana/
 └── README.md
 
 
-🖥️ Deployment Evidence (AKS)
+## 🖥️ Deployment Evidence (AKS)
+
 These screenshots show the Helm installation and service exposure process.
 
 ![Helm Installation](images/terminalmonitoring.png)
@@ -51,40 +52,57 @@ These screenshots show the Helm installation and service exposure process.
 ![Services Exposed](images/terminalmonitoring2.png)
 ![Grafana External IP](images/terminalmonitoring3.png)
 
-🔐 Grafana Login
+---
+
+## 🔐 Grafana Login
+
 Grafana is exposed via an AKS LoadBalancer.
 
-⚙️ Automation Script
+![Grafana Login](images/welcometografana.png)
+
+---
+
+## ⚙️ Automation Script
+
 ![Setup Script](images/setupmonitoring.sh.png)
 ![Setup Script Continued](images/setupmonitoring.sh1.png)
 
-📊 Dashboard Browser
-Grafana automatically provisions Kubernetes dashboards via the
-kube-prometheus-stack.
+---
+
+## 📊 Dashboard Browser
+
+Grafana automatically provisions Kubernetes dashboards via the kube-prometheus-stack.
 
 ![Dashboard Browser](images/dashboards.png)
 
-📈 Live Performance Metrics
-🧾 Cluster Headlines
+---
 
+## 📈 Live Performance Metrics
+
+### 🧾 Cluster Headlines
 ![Cluster Headlines](images/headlinescpuusage.png)
 
-🧮 CPU Usage & Quota
+---
 
+### 🧮 CPU Usage & Quota
 ![CPU Quota](images/cpuquota.png)
 
-💾 Memory Usage & Network
+---
 
+### 💾 Memory Usage & Network
 ![Memory Usage](images/memorynetworkusage.png)
 
-📡 Network Bandwidth & Packets
+---
 
+### 📡 Network Bandwidth & Packets
 ![Current Bandwidth](images/currentbandwidth.png)
 ![Packet Rate](images/packetsbandwidth.png)
 
-🧱 Storage I/O Distribution
+---
 
+### 🧱 Storage I/O Distribution
 ![Storage IO](images/storageiodistribution.png)
+
 
 🚀 Skills Demonstrated
 Kubernetes Monitoring & Observability
