@@ -41,6 +41,7 @@ Monitoring-with-Prometheus-Grafana/
 │   ├── setupmonitoring.sh1.png
 │   └── welcometografana.png
 └── README.md
+
 ⚙️ Automation Script (Helm + Bash)
 The entire observability stack is deployed using a single script:
 
