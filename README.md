@@ -42,15 +42,6 @@ Monitoring-with-Prometheus-Grafana/
 │   └── welcometografana.png
 └── README.md
 
-⚙️ Automation Script (Helm + Bash)
-The entire observability stack is deployed using a single script:
-
-bash
-Copy code
-code/setup-monitoring.sh
-Script Evidence
-
-
 
 🖥️ Deployment Evidence (AKS)
 These screenshots show the Helm installation and service exposure process.
