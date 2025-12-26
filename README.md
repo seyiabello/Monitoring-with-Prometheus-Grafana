@@ -18,7 +18,7 @@ The stack is installed using **Helm** and automated with a **Bash script**, prov
 live visibility into CPU, memory, networking, and storage performance for running workloads.
 
 ---
-
+```md
 ## 🧱 Project Structure
 
 ```text
@@ -42,7 +42,6 @@ Monitoring-with-Prometheus-Grafana/
 │   └── welcometografana.png
 └── README.md
 
----
 
 ## 🖥️ Deployment Evidence (AKS)
 
