@@ -37,7 +37,7 @@ I automated deployment using **Helm** and a **Bash setup script**, validated the
 
 - **Prometheus** scrapes and stores time-series metrics from Kubernetes and nodes  
 - **Grafana** queries Prometheus and visualizes metrics using imported dashboards  
-- **kube-prometheus-stack** installs the complete observability suite (Prometheus, Grafana, Alertmanager, exporters, and dashboards)
+- **kube-prometheus-stack** installs Prometheus, Grafana, Alertmanager, exporters, and dashboards
 
 ---
 
@@ -82,10 +82,10 @@ Retrieves service external IPs
 
 Retrieves and decodes Grafana admin password
 
-Setup Script (Evidence)
+⚙️ Automation Script (Evidence)
 
 
-▶️ Running the Setup Script (Deployment Evidence)
+🖥️ Deployment Evidence
 These screenshots show the stack being installed and validated in AKS.
 
 
@@ -104,9 +104,9 @@ bash
 Copy code
 kubectl get secret -n monitoring kps-grafana \
   -o jsonpath='{.data.admin-password}' | base64 -d
-Grafana Login Page (Evidence)
+🔐 Grafana Login (Evidence)
 
-📊 Dashboard Provisioning (Evidence)
+📊 Dashboard Browser (Evidence)
 Once installed, the stack automatically imports Kubernetes dashboards (mixins) into Grafana.
 
 
@@ -120,29 +120,19 @@ Networking metrics
 
 Control-plane components (API server, etcd, CoreDNS)
 
-📈 Live Performance Metrics (Evidence)
+📈 Performance Metrics (Evidence)
 Below are live screenshots from my AKS cluster monitoring workloads (including nimbus-site).
 
 🧾 Cluster Headlines (CPU & Memory Overview)
-This provides a high-level view of CPU and memory utilisation relative to requests/limits.
-
 
 🧮 CPU Usage & Quota
-Shows per-pod CPU usage and how it compares to Kubernetes resource allocations.
-
 
 💾 Memory Usage
-Highlights pod-level memory consumption, useful for detecting memory pressure and OOM risk.
-
 
 📡 Network Bandwidth & Packets
-Useful for detecting traffic spikes, throughput issues, or unexpected networking behaviour.
-
 
 
 🧱 Storage I/O Distribution
-Shows read/write activity and throughput patterns per pod, useful for diagnosing disk bottlenecks.
-
 
 🔔 Alerting Foundations (Installed)
 kube-prometheus-stack also installs Alertmanager and default alert rules.
@@ -179,3 +169,7 @@ DevOps Engineer | MSc Human-Centred AI
 
 🔗 GitHub: https://github.com/seyiabello
 🔗 LinkedIn: https://www.linkedin.com/in/oluwaseyi-bello-2653a2215/
+
+yaml
+Copy code
+
