@@ -19,6 +19,7 @@ live visibility into CPU, memory, networking, and storage performance for runnin
 
 ---
 
+```md
 ## 🧱 Project Structure
 
 ```text
@@ -41,6 +42,13 @@ Monitoring-with-Prometheus-Grafana/
 │   ├── setupmonitoring.sh1.png
 │   └── welcometografana.png
 └── README.md
+yaml
+Copy code
+
+⬆️ **That final triple-backtick is the missing piece.**
+
+---
+
 
 ## 🖥️ Deployment Evidence (AKS)
 
