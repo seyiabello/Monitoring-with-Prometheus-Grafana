@@ -1,49 +1,27 @@
-# 🔭 Monitoring Kubernetes with Prometheus & Grafana  
-**Production-Style Observability on Azure Kubernetes Service (AKS)**
+# 🔭 Monitoring with Prometheus & Grafana  
+**Production-Style Kubernetes Observability on Azure (AKS)**
 
-![AKS](https://img.shields.io/badge/Azure-Kubernetes%20Service-0078D4?logo=microsoftazure&logoColor=white)
+![AKS](https://img.shields.io/badge/Azure-AKS-0078D4?logo=microsoftazure&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Observability-326CE5?logo=kubernetes&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-Metrics%20Collection-E6522C?logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-Visualization-F46800?logo=grafana&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-Deployment%20Automation-0F1689?logo=helm&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboards-F46800?logo=grafana&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-Automation-0F1689?logo=helm&logoColor=white)
 
 ---
 
 ## 📌 Overview
 
-This project demonstrates a **production-style Kubernetes observability stack** deployed on **Azure Kubernetes Service (AKS)** using **Prometheus** for metrics collection and **Grafana** for visualization.
+This project demonstrates a **real-world Kubernetes monitoring and visualization setup**
+using **Prometheus** and **Grafana**, deployed on **Azure Kubernetes Service (AKS)**.
 
-I automated deployment using **Helm** and a **Bash setup script**, validated the installation end-to-end, and captured live dashboards showing CPU, memory, networking, and storage metrics for running workloads (including `nimbus-site`).
-
-🔗 **Repository:** https://github.com/seyiabello/Monitoring-with-Prometheus-Grafana
-
----
-
-## ✅ What This Project Delivers
-
-- Automated deployment of **kube-prometheus-stack** using Helm  
-- Dedicated `monitoring` namespace for clean separation  
-- Prometheus scraping cluster/node/pod metrics  
-- Grafana exposed via AKS **LoadBalancer** with admin credentials stored in Kubernetes Secrets  
-- Auto-provisioned dashboards from official Kubernetes mixins  
-- Evidence dashboards for **CPU, memory, network, and storage I/O**  
-- Alerting foundations via **Alertmanager** (installed with the stack)
-
----
-
-## 🧠 Architecture Summary
-
-**Prometheus → Grafana (Datasource) → Dashboards**
-
-- **Prometheus** scrapes and stores time-series metrics from Kubernetes and nodes  
-- **Grafana** queries Prometheus and visualizes metrics using imported dashboards  
-- **kube-prometheus-stack** installs Prometheus, Grafana, Alertmanager, exporters, and dashboards
+The stack is installed using **Helm** and automated with a **Bash script**, providing
+live visibility into CPU, memory, networking, and storage performance for running workloads.
 
 ---
 
 ## 🧱 Project Structure
 
-```bash
+```text
 Monitoring-with-Prometheus-Grafana/
 ├── code/
 │   └── setup-monitoring.sh
@@ -63,105 +41,64 @@ Monitoring-with-Prometheus-Grafana/
 │   ├── setupmonitoring.sh1.png
 │   └── welcometografana.png
 └── README.md
-⚙️ Installation & Automation (Bash + Helm)
-I deployed the entire stack using a single Bash automation script:
+⚙️ Automation Script (Helm + Bash)
+The entire observability stack is deployed using a single script:
 
 bash
 Copy code
 code/setup-monitoring.sh
-What the script automates
-Adds the Prometheus Helm repository
-
-Creates the monitoring namespace
-
-Installs kube-prometheus-stack with Grafana + Prometheus exposed as LoadBalancers
-
-Waits for pods to become Ready
-
-Retrieves service external IPs
-
-Retrieves and decodes Grafana admin password
-
-⚙️ Automation Script (Evidence)
+Script Evidence
 
 
-🖥️ Deployment Evidence
-These screenshots show the stack being installed and validated in AKS.
+
+🖥️ Deployment Evidence (AKS)
+These screenshots show the Helm installation and service exposure process.
 
 
 
 
 
-🌐 Grafana Access
-Grafana is exposed via AKS LoadBalancer:
 
-text
-Copy code
-http://<EXTERNAL-IP>:31832
-Grafana password is retrieved securely from Kubernetes secrets:
-
-bash
-Copy code
-kubectl get secret -n monitoring kps-grafana \
-  -o jsonpath='{.data.admin-password}' | base64 -d
-🔐 Grafana Login (Evidence)
-
-📊 Dashboard Browser (Evidence)
-Once installed, the stack automatically imports Kubernetes dashboards (mixins) into Grafana.
+🔐 Grafana Login
+Grafana is exposed via an AKS LoadBalancer.
 
 
-These dashboards include coverage for:
 
-Pods / namespaces / workloads
+📊 Dashboard Browser
+Grafana automatically provisions Kubernetes dashboards via the
+kube-prometheus-stack.
 
-Node health and resource usage
 
-Networking metrics
 
-Control-plane components (API server, etcd, CoreDNS)
+📈 Live Performance Metrics
+🧾 Cluster Headlines
 
-📈 Performance Metrics (Evidence)
-Below are live screenshots from my AKS cluster monitoring workloads (including nimbus-site).
-
-🧾 Cluster Headlines (CPU & Memory Overview)
 
 🧮 CPU Usage & Quota
 
-💾 Memory Usage
+
+💾 Memory Usage & Network
+
 
 📡 Network Bandwidth & Packets
 
 
+
 🧱 Storage I/O Distribution
 
-🔔 Alerting Foundations (Installed)
-kube-prometheus-stack also installs Alertmanager and default alert rules.
-This provides a strong foundation for production alerting workflows (Slack/PagerDuty/email integrations) even if not fully configured in this demo.
 
 🚀 Skills Demonstrated
-Kubernetes Observability
-Prometheus scraping and metric retention
+Kubernetes Monitoring & Observability
 
-Grafana dashboards (Kubernetes mixins)
+Prometheus metric scraping
 
-Namespace-based monitoring patterns
+Grafana dashboard analysis
 
-DevOps Automation
-Helm-driven deployments
+Helm-based deployments
 
-Bash scripting for repeatable installation and validation
+Bash automation
 
-Cloud Engineering (AKS)
-LoadBalancer services and public exposure for dashboards
-
-Namespace isolation and operational tooling
-
-SRE Monitoring Practices
-Resource utilisation analysis (requests vs limits)
-
-Capacity planning signals
-
-Network and storage observability
+AKS operational tooling
 
 👤 Author
 Oluwaseyi Adesegun Bello
@@ -169,7 +106,4 @@ DevOps Engineer | MSc Human-Centred AI
 
 🔗 GitHub: https://github.com/seyiabello
 🔗 LinkedIn: https://www.linkedin.com/in/oluwaseyi-bello-2653a2215/
-
-yaml
-Copy code
 
