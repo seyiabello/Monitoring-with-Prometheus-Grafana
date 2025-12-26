@@ -43,7 +43,6 @@ Monitoring-with-Prometheus-Grafana/
 │   └── welcometografana.png
 └── README.md
 
-```md
 
 ---
 
@@ -57,6 +56,7 @@ These screenshots show the Helm installation and service exposure process.
 ![Services Exposed](images/terminalmonitoring2.png)
 ![Grafana External IP](images/terminalmonitoring3.png)
 
+```
 ---
 
 ## 🔐 Grafana Login
